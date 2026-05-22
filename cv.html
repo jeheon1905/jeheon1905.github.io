@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Curriculum Vitae &middot; Jeheon Woo</title>
+<meta name="description" content="Curriculum Vitae of Jeheon Woo — AI Fellow (AI Assistant Professor) at the Center for AI and Natural Sciences, KIAS." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  :root {
+    --bg:         #fafaf9;
+    --bg-2:       #f1f0ec;
+    --bg-3:       #e9e7e1;
+    --ink:        #1c1b1a;
+    --ink-soft:   #3a3937;
+    --ink-mute:   #76746f;
+    --rule:       #e3e1dc;
+    --rule-2:     #cfcdc7;
+    --accent:     #2c5d4f;
+    --accent-2:   #3d7a68;
+    --accent-soft:#e8f0eb;
+    --warm:       #c97b3c;
+    --warm-soft:  #f6e2cf;
+    --plum:       #6b3a7a;
+    --plum-soft:  #ebd9f1;
+    --display:    'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans:       'Inter Tight', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --mono:       'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-feature-settings: "kern" 1, "ss01" 1, "cv11" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(28,27,26,0.022) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(28,27,26,0.022) 1px, transparent 1px);
+    background-size: 32px 32px;
+    z-index: 0;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+  a:hover { color: var(--accent-2); }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .topbar-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .topbar .back {
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .topbar .back i { font-size: 11px; }
+  .topbar .back:hover { color: var(--accent); }
+  .topbar .topbar-nav {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+  }
+  .topbar .topbar-nav a { color: var(--ink-soft); }
+  .topbar .topbar-nav a:hover { color: var(--accent); }
+  .topbar .topbar-nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ============ PAGE ============ */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* CV header */
+  .cv-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .cv-portrait {
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    background: var(--bg-2);
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--ink-mute);
+    letter-spacing: -0.02em;
+  }
+  .cv-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .cv-title h1 {
+    font-family: var(--sans);
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+  }
+  .cv-title .cv-tag {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-mute);
+    margin: 0 0 10px;
+  }
+  .cv-title .cv-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .cv-title .cv-meta-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .cv-title .cv-meta-row i { color: var(--ink-mute); font-size: 11px; width: 12px; }
+
+  /* Download bar */
+  .download-bar {
+    margin-bottom: 36px;
+    padding: 14px 20px;
+    background: var(--bg-2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border: 1px solid var(--rule);
+  }
+  .download-bar .label {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .download-bar .label em {
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .download-bar a, .download-bar .print-btn {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--bg);
+    background: var(--ink);
+    padding: 9px 18px;
+    border-radius: 3px;
+    transition: background 160ms;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  .download-bar a:hover, .download-bar .print-btn:hover { background: var(--accent); }
+
+  /* CV blocks */
+  .cv-section {
+    margin-bottom: 36px;
+  }
+  .cv-section h2 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cv-section h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin: 22px 0 10px;
+  }
+
+  .cv-list { list-style: none; padding: 0; margin: 0; }
+  .cv-list li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14.5px;
+  }
+  .cv-list li:last-child { border-bottom: none; }
+  .cv-list .when {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    padding-top: 3px;
+  }
+  .cv-list .what { color: var(--ink-soft); }
+  .cv-list .what b { color: var(--ink); font-weight: 600; }
+  .cv-list .what .where {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+  }
+  .cv-list .what .where-kr {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+    font-style: italic;
+  }
+  .cv-list .what em { font-style: italic; }
+  .cv-list .what .thesis {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .cv-list .what .thesis-kr {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-mute);
+    margin-top: 1px;
+  }
+
+  /* tag inline within cv-list .what */
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .tag.oral  { color: var(--accent); background: var(--accent-soft); }
+  .tag.poster{ color: var(--ink-mute); background: var(--bg-2); border: 1px solid var(--rule); }
+  .tag.invited { color: var(--plum); background: var(--plum-soft); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+  }
+  .two-col .cv-section { margin-bottom: 0; }
+
+  /* Publications block */
+  .pub-note {
+    font-size: 12.5px;
+    color: var(--ink-mute);
+    margin: 0 0 14px;
+    font-style: italic;
+  }
+  .pub-note kbd {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: var(--bg-2);
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-style: normal;
+  }
+
+  .pub-year {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink-mute);
+    margin: 20px 0 4px;
+    letter-spacing: 0.04em;
+  }
+  .pub-year:first-child { margin-top: 0; }
+
+  .pub {
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .pub:last-child { border-bottom: 1px solid var(--rule); }
+  .pub .title {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .pub .authors {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 3px;
+  }
+  .pub .authors mark {
+    background: transparent;
+    color: var(--ink);
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .pub .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    font-size: 12.5px;
+    margin: 0;
+  }
+  .pub .venue {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--ink-mute);
+  }
+  .pub .venue .vol {
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .pub .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+  .badge.co-first { color: var(--accent); background: var(--accent-soft); }
+  .badge.hot      { color: #8a3d12; background: var(--warm-soft); }
+  .badge.top-conf { color: var(--plum); background: var(--plum-soft); }
+  .badge.nature   { color: var(--ink-soft); background: var(--bg-3); border: 1px solid var(--ink-mute); }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 28px;
+  }
+  .skills-cell .skill-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .skills-cell .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 6px;
+  }
+  .skills-cell .skill-items span {
+    font-size: 12px;
+    background: var(--bg-2);
+    color: var(--ink-soft);
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-family: var(--mono);
+  }
+
+  /* Research interests pills */
+  .interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+  }
+  .interests span {
+    font-size: 13px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 4px 11px;
+    border-radius: 999px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer .colophon {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+  }
+  footer a { color: var(--ink-mute); border-bottom: 1px dotted var(--rule-2); }
+  footer a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  .reveal.d1 { animation-delay: 60ms; }
+  .reveal.d2 { animation-delay: 140ms; }
+  .reveal.d3 { animation-delay: 220ms; }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 720px) {
+    .topbar-inner { padding: 14px 22px; }
+    .topbar .topbar-nav { gap: 12px; }
+    .page { padding: 32px 22px 60px; }
+    .cv-header { grid-template-columns: 1fr; gap: 18px; }
+    .cv-portrait { width: 96px; height: 96px; }
+    .two-col { grid-template-columns: 1fr; gap: 24px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .cv-list li { grid-template-columns: 90px 1fr; gap: 12px; font-size: 13.5px; }
+  }
+
+  /* ============ PRINT / PDF ============ */
+  @page {
+    size: A4;
+    margin: 16mm 16mm 14mm;
+  }
+
+  @media print {
+    :root {
+      /* slightly stronger ink for print legibility */
+      --ink: #111;
+      --ink-soft: #333;
+      --ink-mute: #666;
+    }
+    html, body {
+      background: #fff;
+      font-size: 10.5pt;
+      line-height: 1.42;
+    }
+    body::before { display: none; }            /* drop the grid backdrop */
+    .topbar, .download-bar, footer { display: none; }
+    .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
+
+    .page {
+      padding: 0;
+      max-width: none;
+      margin: 0;
+    }
+
+    /* tighten the header */
+    .cv-header {
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid #111;
+      break-inside: avoid;
+    }
+    .cv-portrait { width: 76px; height: 76px; font-size: 26px; }
+    .cv-title h1 { font-size: 20pt; margin-bottom: 3px; }
+    .cv-title .cv-tag { font-size: 11pt; margin-bottom: 6px; }
+    .cv-title .cv-meta-row { gap: 3px 14px; font-size: 8.5pt; }
+
+    /* section spacing */
+    .cv-section { margin-bottom: 14px; break-inside: avoid-page; }
+    .cv-section h2 {
+      font-size: 9pt;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      /* keep the heading with its content */
+      break-after: avoid;
+    }
+    .cv-section h3 { font-size: 8.5pt; margin: 12px 0 6px; break-after: avoid; }
+    .two-col { gap: 18px 36px; }
+
+    /* lists: don't split an entry across pages */
+    .cv-list li {
+      padding: 4px 0;
+      gap: 12px;
+      font-size: 9.5pt;
+      break-inside: avoid;
+    }
+    .cv-list .when { font-size: 8pt; }
+    .cv-list .what .where,
+    .cv-list .what .where-kr,
+    .cv-list .what .thesis,
+    .cv-list .what .thesis-kr { font-size: 8.5pt; }
+
+    /* publications */
+    .pub { padding: 5px 0; break-inside: avoid; }
+    .pub-note { font-size: 8.5pt; margin-bottom: 8px; }
+    .pub .title { font-size: 9.5pt; }
+    .pub .authors { font-size: 8.5pt; }
+    .pub .meta-row { font-size: 8pt; }
+    .pub .venue { font-size: 8.5pt; }
+    .pub-year { font-size: 9pt; margin: 12px 0 3px; break-after: avoid; }
+
+    /* ensure badges/tags & accent colors actually print */
+    .badge, .tag, .interests span, .skills-cell .skill-items span,
+    .pub-note kbd, .cv-section h2, .pub .authors mark {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .pub .authors mark { border-bottom-color: #111; }
+
+    /* skills / interests a touch tighter */
+    .skills-grid { gap: 12px 24px; }
+    .skills-cell .skill-items span { font-size: 8pt; padding: 2px 7px; }
+    .interests span { font-size: 9pt; padding: 3px 9px; }
+
+    a { color: #111; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Jeheon Woo</a>
+    <nav class="topbar-nav" aria-label="Main">
+      <a href="index.html">About</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="cv.html" class="active">CV</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ PAGE ============ -->
+<div class="page">
+
+  <!-- Header -->
+  <header class="cv-header reveal">
+    <div class="cv-portrait"><img src="profile-000.jpg" alt="Jeheon Woo"/></div>
+    <div class="cv-title">
+      <h1>Curriculum Vitae</h1>
+      <p class="cv-tag">Jeheon Woo &middot; AI Fellow (AI Assistant Professor)</p>
+      <div class="cv-meta-row">
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:jhwoo1905@kias.re.kr">jhwoo1905@kias.re.kr</a></span>
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:jhwoo1905@gmail.com">jhwoo1905@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone"></i> +82 10-3605-3767</span>
+        <span><i class="fa-solid fa-location-dot"></i> Seoul, Korea</span>
+        <span><i class="fa-solid fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=9conLs4AAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a></span>
+        <span><i class="fa-brands fa-orcid"></i> <a href="https://orcid.org/0000-0002-5532-3144" target="_blank" rel="noopener">0000-0002-5532-3144</a></span>
+        <span><i class="fa-brands fa-github"></i> <a href="https://github.com/jeheon1905" target="_blank" rel="noopener">jeheon1905</a></span>
+        <span><i class="fa-brands fa-linkedin-in"></i> <a href="https://kr.linkedin.com/in/jeheon-woo-981a10338" target="_blank" rel="noopener">LinkedIn</a></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Print / Save as PDF -->
+  <div class="download-bar reveal d1">
+    <span class="label">This CV is generated directly from this page. Use your browser's <em>Save as PDF</em> for an identical PDF copy.</span>
+    <button type="button" class="print-btn" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Save as PDF</button>
+  </div>
+
+  <!-- Two-column: Employment + Education -->
+  <div class="two-col reveal d1">
+    <section class="cv-section">
+      <h2>Professional Experience</h2>
+      <ul class="cv-list">
+        <li>
+          <span class="when">2026.5 — &nbsp;</span>
+          <span class="what"><b>AI Fellow (AI Assistant Professor)</b>
+            <span class="where">Center for AI and Natural Sciences, Korea Institute for Advanced Study (KIAS)</span></span>
+        </li>
+        <li>
+          <span class="when">2025.3 — 2026.4</span>
+          <span class="what"><b>Postdoctoral Researcher</b>
+            <span class="where">Div. of National Supercomputing, Korea Institute of Science and Technology Information (KISTI)</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <ul class="cv-list">
+        <li>
+          <span class="when">2019.2 — 2025.2</span>
+          <span class="what"><b>Ph.D., Chemistry</b>
+            <span class="where">Korea Advanced Institute of Science and Technology (KAIST), Daejeon, Korea</span>
+            <span class="thesis">Thesis: <em>Acceleration of Quantum Chemistry Calculations through Algorithmic Optimization with Advanced Hardware</em> &middot; advisor: Woo Youn Kim</span>
+            <span class="thesis-kr">알고리즘 최적화 및 고급 하드웨어를 통한 양자 화학 계산의 가속화</span>
+          </span>
+        </li>
+        <li>
+          <span class="when">2015.3 — 2019.2</span>
+          <span class="what"><b>B.S., Chemistry and B.S., Physics</b> (double major)
+            <span class="where">Hanyang University, Seoul, Korea</span></span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Research Interests -->
+  <section class="cv-section reveal d2">
+    <h2>Research Interests</h2>
+    <div class="interests">
+      <span>Computational Chemistry</span>
+      <span>Density Functional Theory</span>
+      <span>Machine Learning</span>
+      <span>AI for Science</span>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="cv-section reveal d2">
+    <h2>Publications</h2>
+    <p class="pub-note">
+      <kbd>*</kbd> corresponding author &middot; <kbd>†</kbd> co-first / equal contribution. Full list on <a href="https://scholar.google.com/citations?user=9conLs4AAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+
+    <h3>SCI Journal</h3>
+
+    <p class="pub-year">2026</p>
+
+    <article class="pub">
+      <p class="title">A Mixed-Precision Approach to a Preconditioned Eigensolver for Efficient Density Functional Calculations on AI-Focused GPUs</p>
+      <p class="authors"><mark>J. Woo</mark>*, S. Choi*</p>
+      <p class="meta-row">
+        <span class="venue">Journal of Chemical Theory and Computation, <span class="vol">22(4), 1687&ndash;1698</span></span>
+      </p>
+    </article>
+
+    <article class="pub">
+      <p class="title">Riemannian Denoising Model for Molecular Structure Optimization with Chemical Accuracy</p>
+      <p class="authors"><mark>J. Woo</mark><sup>&dagger;</sup>, S. Kim<sup>&dagger;</sup>, J. H. Kim, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">Nature Computational Science, <span class="vol">6, 134&ndash;144</span></span>        <span class="badge co-first">co-first</span>
+      </p>
+    </article>
+
+    <p class="pub-year">2024</p>
+
+    <article class="pub">
+      <p class="title">Efficient Shift-and-Invert Preconditioning for Multi-GPU Accelerated Density Functional Calculations</p>
+      <p class="authors"><mark>J. Woo</mark>, W. Y. Kim*, S. Choi*</p>
+      <p class="meta-row">
+        <span class="venue">Journal of Chemical Theory and Computation, <span class="vol">20(17), 7443&ndash;7452</span></span>
+      </p>
+    </article>
+
+    <article class="pub">
+      <p class="title">Diffusion-Based Generative AI for Exploring Transition States from 2D Molecular Graphs</p>
+      <p class="authors">S. Kim<sup>&dagger;</sup>, <mark>J. Woo</mark><sup>&dagger;</sup>, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">Nature Communications, <span class="vol">15(1), 341</span></span>        <span class="badge co-first">co-first</span>
+      </p>
+    </article>
+
+    <p class="pub-year">2023</p>
+
+    <article class="pub">
+      <p class="title">Gaussian-Approximated Poisson Preconditioner for Iterative Diagonalization in Real-Space Density Functional Theory</p>
+      <p class="authors"><mark>J. Woo</mark>, S. Kim, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">The Journal of Physical Chemistry A, <span class="vol">127(17), 3883&ndash;3893</span></span>
+      </p>
+    </article>
+
+    <article class="pub">
+      <p class="title">Dynamic Precision Approach for Accelerating Large-Scale Eigenvalue Solvers in Electronic Structure Calculations on Graphics Processing Units</p>
+      <p class="authors"><mark>J. Woo</mark><sup>&dagger;</sup>, S. Kim<sup>&dagger;</sup>, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">Journal of Chemical Theory and Computation, <span class="vol">19(5), 1457&ndash;1465</span></span>      </p>
+    </article>
+
+    <p class="pub-year">2022</p>
+
+    <article class="pub">
+      <p class="title">System-Specific Separable Basis Based on Tucker Decomposition: Application to Density Functional Calculations</p>
+      <p class="authors"><mark>J. Woo</mark>, W. Y. Kim*, S. Choi*</p>
+      <p class="meta-row">
+        <span class="venue">Journal of Chemical Theory and Computation, <span class="vol">18(5), 2875&ndash;2884</span></span>
+      </p>
+    </article>
+
+    <article class="pub">
+      <p class="title">Neural Network-Based Pseudopotential: Development of a Transferable Local Pseudopotential</p>
+      <p class="authors"><mark>J. Woo</mark><sup>&dagger;</sup>, H. Kim<sup>&dagger;</sup>, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">Physical Chemistry Chemical Physics, <span class="vol">24(34), 20094&ndash;20103</span></span>        <span class="badge hot">PCCP hot article</span>
+      </p>
+    </article>
+
+    <p class="pub-year">2020</p>
+
+    <article class="pub">
+      <p class="title">ACE-Molecule: An Open-Source Real-Space Quantum Chemistry Package</p>
+      <p class="authors">S. Kang<sup>&dagger;</sup>, <mark>J. Woo</mark><sup>&dagger;</sup>, J. Kim, H. Kim, Y. Kim, J. Lim, S. Choi*, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">The Journal of Chemical Physics, <span class="vol">152, 124110</span></span>      </p>
+    </article>
+
+    <h3>AI Conference</h3>
+
+    <p class="pub-year">2025</p>
+
+    <article class="pub">
+      <p class="title">Discrete Diffusion Schrödinger Bridge Matching for Graph Transformation</p>
+      <p class="authors">J. H. Kim<sup>&dagger;</sup>, S. Kim<sup>&dagger;</sup>, S. Moon<sup>&dagger;</sup>, H. Kim<sup>&dagger;</sup>, <mark>J. Woo</mark><sup>&dagger;</sup>, W. Y. Kim</p>
+      <p class="meta-row">
+        <span class="venue">International Conference on Learning Representations (ICLR)</span>      </p>
+    </article>
+
+    <p class="pub-year">2023</p>
+
+    <article class="pub">
+      <p class="title">GeoTMI: Predicting Quantum Chemical Property with Easy-to-Obtain Geometry via Positional Denoising</p>
+      <p class="authors">H. Kim<sup>&dagger;</sup>, <mark>J. Woo</mark><sup>&dagger;</sup>, S. Kim<sup>&dagger;</sup>, S. Moon<sup>&dagger;</sup>, J. H. Kim<sup>&dagger;</sup>, W. Y. Kim*</p>
+      <p class="meta-row">
+        <span class="venue">Advances in Neural Information Processing Systems (NeurIPS)</span>      </p>
+    </article>
+  </section>
+
+  <!-- Invited Talks -->
+  <section class="cv-section reveal d3">
+    <h2>Invited Talks</h2>
+    <ul class="cv-list">
+      <li>
+        <span class="when">2025.9.5</span>
+        <span class="what"><b>Efficient Density Functional Theory Calculations on GPUs via Mixed Precision Approach</b><span class="tag invited">invited</span>
+          <span class="where">Korea Supercomputing Conference 2025 (2025.9.4–9.5)</span></span>
+      </li>
+      <li>
+        <span class="when">2025.7.18</span>
+        <span class="what"><b>Real-space Grid Method &amp; GPU Acceleration</b><span class="tag invited">invited</span>
+          <span class="where">The 6th Electronic Structure Calculations Summer School (2025.7.14–7.18)</span></span>
+      </li>
+      <li>
+        <span class="when">2024.10.16</span>
+        <span class="what"><b>Efficient Solving of the Kohn–Sham Equation for Large-Scale DFT: Leveraging GPU Acceleration and Advanced Techniques</b><span class="tag invited">invited</span>
+          <span class="where">134th General Meeting of the Korean Chemical Society (2024.10.16–10.18)</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Conferences & Workshops -->
+  <section class="cv-section reveal d3">
+    <h2>Conferences &amp; Workshops</h2>
+    <ul class="cv-list">
+      <li>
+        <span class="when">2025.4.21 — 25</span>
+        <span class="what"><b>Efficient Density Functional Calculations on AI-Focused GPUs via Mixed Precision Approach</b><span class="tag oral">oral</span>
+          <span class="where">The 11th Conference of the Asia-Pacific Association of Theoretical and Computational Chemists (APATCC11)</span></span>
+      </li>
+      <li>
+        <span class="when">2024.12.15</span>
+        <span class="what"><b>Discrete Diffusion Schrödinger Bridge Matching for Graph Transformation</b><span class="tag poster">poster</span>
+          <span class="where">NeurIPS 2024 Workshop on AI for New Drug Modalities</span></span>
+      </li>
+      <li>
+        <span class="when">2024.4.24 — 26</span>
+        <span class="what"><b>Development of Efficient Eigenvalue Solver for Multi-GPU Accelerated DFT Calculations</b><span class="tag poster">poster</span>
+          <span class="where">133rd General Meeting of the Korean Chemical Society (KCS)</span></span>
+      </li>
+      <li>
+        <span class="when">2023.9.10 — 11</span>
+        <span class="what"><b>Development of GPU-Accelerated Real-Space Density Functional Theory Code</b><span class="tag poster">poster</span>
+          <span class="where">The 6th ICReDD International Symposium</span></span>
+      </li>
+      <li>
+        <span class="when">2023.9.4 — 9</span>
+        <span class="what"><b>Neural network-based pseudopotential: development of a transferable local pseudopotential</b><span class="tag poster">poster</span>
+          <span class="where">The 5th Conference of Theory and Applications of Computational Chemistry (TACC)</span></span>
+      </li>
+      <li>
+        <span class="when">2023.7.13 — 14</span>
+        <span class="what"><b>Development of an Efficient Preconditioned Eigenvalue Solver for Real-Space DFT and Multi-GPU Acceleration</b><span class="tag poster">poster</span>
+          <span class="where">The 19th KIAS Electronic Structure Calculation Workshop</span></span>
+      </li>
+      <li>
+        <span class="when">2022.7.7 — 8</span>
+        <span class="what"><b>Efficient calculation of Coulomb energy and atomic force using atom-centered compensation charge in real-space DFT</b><span class="tag poster">poster</span>
+          <span class="where">The 18th KIAS Electronic Structure Calculation Workshop</span></span>
+      </li>
+      <li>
+        <span class="when">2019.11.3 — 6</span>
+        <span class="what"><b>Implement PBC in ACE-Molecule</b><span class="tag poster">poster</span>
+          <span class="where">The 5th International Conference on Molecular Simulation (ICMS)</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Teaching -->
+  <section class="cv-section reveal d3">
+    <h2>Teaching Experience</h2>
+
+    <h3>Lecturer</h3>
+    <ul class="cv-list">
+      <li>
+        <span class="when">2026.1.20</span>
+        <span class="what"><b>Chemical Molecules as Graphs: Hands-on Graph Neural Networks</b>
+          <span class="where">AI Team Project Supercomputing Youth Camp, UNIST</span>
+          <span class="where-kr">화학 분자를 그래프로 이해하기: 그래프 신경망 실습 &middot; AI 팀 프로젝트 슈퍼컴퓨팅 청소년캠프</span></span>
+      </li>
+      <li>
+        <span class="when">2025.12.17</span>
+        <span class="what"><b>Introduction to VASP Calculations: Bulk Structure Construction, Optimization, and Electronic Structure Analysis</b>
+          <span class="where">VASP Hands-on Workshop, UNIST</span>
+          <span class="where-kr">VASP 기본 계산 실습: 벌크 구조 작성, 최적화, 전자구조 분석 &middot; 2025 VASP 실습교육</span></span>
+      </li>
+    </ul>
+
+    <h3>Teaching Assistant</h3>
+    <ul class="cv-list">
+      <li>
+        <span class="when">Fall 2021</span>
+        <span class="what"><b>Chemistry Major Lab I</b>
+          <span class="where">KAIST</span></span>
+      </li>
+      <li>
+        <span class="when">Spring 2021</span>
+        <span class="what"><b>Physical Chemistry I</b>
+          <span class="where">KAIST</span></span>
+      </li>
+      <li>
+        <span class="when">Fall 2020</span>
+        <span class="what"><b>Chemistry Major Lab I</b>
+          <span class="where">KAIST</span></span>
+      </li>
+      <li>
+        <span class="when">Spring 2019</span>
+        <span class="what"><b>General Chemistry Experiment I</b>
+          <span class="where">KAIST</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Awards -->
+  <section class="cv-section reveal d3">
+    <h2>Awards &amp; Honors</h2>
+    <ul class="cv-list">
+      <li>
+        <span class="when">2019 — 24</span>
+        <span class="what"><b>Government-Sponsored Scholarship</b>
+          <span class="where">KAIST</span></span>
+      </li>
+      <li>
+        <span class="when">2019.8</span>
+        <span class="what"><b>Award for Excellence in Poster Presentation</b>
+          <span class="where">Samsung–KAIST Cooperation Meeting</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section class="cv-section reveal d3">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-cell">
+        <div class="skill-label">Programming</div>
+        <div class="skill-items">
+          <span>Python</span><span>C++</span><span>LaTeX</span>
+        </div>
+      </div>
+      <div class="skills-cell">
+        <div class="skill-label">Languages</div>
+        <div class="skill-items">
+          <span>Korean (native)</span><span>English</span><span>Japanese (JLPT N2)</span>
+        </div>
+      </div>
+      <div class="skills-cell">
+        <div class="skill-label">Quantum Chemistry Tools</div>
+        <div class="skill-items">
+          <span>Gaussian</span><span>Orca</span><span>Quantum Espresso</span>
+          <span>VASP</span><span>GPAW</span><span>Octopus</span>
+          <span>PySCF</span><span>ACE-Molecule</span><span>etc.</span>
+        </div>
+      </div>
+      <div class="skills-cell">
+        <div class="skill-label">Other</div>
+        <div class="skill-items">
+          <span>Machine Learning</span><span>Parallel Programming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Jeheon Woo &middot; <a href="index.html">Home</a></div>
+    <div class="colophon">Last updated 2026.05.23</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
